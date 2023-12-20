@@ -5,15 +5,10 @@
     <base target="_top">
   </head>
   <body>
-    <table>
-      <? for (var i = 0; i < data.length; i++) { ?>
-        <tr>
-          <? for (var j = 0; j < data[i].length; j++) { ?>
-            <td><?= data[i][j] ?></td>
-          <? } ?>
-        </tr>
-      <? } ?>
-    </table>
+       <script>
+           google.script.run.withSuccessHandler(showData).getData();
+       </script>
+  </head>
   </body>
 </html>
 </html>
