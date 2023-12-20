@@ -2,13 +2,10 @@ function doGet() {
   return HtmlService.createTemplateFromFile('Index').evaluate();
 }
  
-
-function getData(){
-  var spreadSheetId = "1wvY7AXiKFdOdoohG3b5JRTdD_shN7D52WZGDjzgesfU";    //REPLACE WITH YOUR ID
-  var dataRange     = "Data!D8";
- 
-  var range   = Sheets.Spreadsheets.Values.get(spreadSheetId, dataRange);
-  var values  = range.values;
- 
-  return values;
+function getData() {
+  return SpreadsheetApp
+      .openById('1wvY7AXiKFdOdoohG3b5JRTdD_shN7D52WZGDjzgesfU')
+      .getSheet('Main')
+      .getDataRange(D8:D8)
+      .getValues();
 }
